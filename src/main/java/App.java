@@ -7,10 +7,13 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Vehicle carA = new Vehicle("CarA", "BrandA");
-        Vehicle carB = new Vehicle("CarB", "BrandB");
+        Vehicle carA = new Vehicle("Vehicle", "BrandA");
+        Vehicle carB = new Vehicle("Vehicle", "BrandB");
         carA.speedUp(10);
         carB.speedUp((50));
+        Car carC = new Car("CarC", "BrandC");
+        carC.speedUp(180);
+        carC.speedUp(201);
 
     }
 }
@@ -23,6 +26,20 @@ class Vehicle {
     }
     public void speedUp(int speed){
         System.out.println("Name: "+this.name+" Brand: "+this.brand+" with speed "+speed);
+    }
+}
+class Car extends Vehicle {
+    public Car(String name, String brand){
+        super(name, brand);
+    }
+    @Override
+    public void speedUp(int speed){
+        if(speed<200){
+            super.speedUp(speed);
+        }
+        else{
+            System.out.println("Cannot Speed Up");
+        }
     }
 }
 
