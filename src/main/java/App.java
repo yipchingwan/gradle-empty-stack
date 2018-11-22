@@ -7,6 +7,22 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Vehicle carA = new Vehicle("CarA", "BrandA");
+        Vehicle carB = new Vehicle("CarB", "BrandB");
+        carA.speedUp(10);
+        carB.speedUp((50));
+
     }
 }
+class Vehicle {
+    String name;
+    String brand;
+    public Vehicle(String name, String brand){
+        this.name = name;
+        this.brand = brand;
+    }
+    public void speedUp(int speed){
+        System.out.println("Name: "+this.name+" Brand: "+this.brand+" with speed "+speed);
+    }
+}
+
